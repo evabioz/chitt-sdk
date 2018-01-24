@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 7.10.0
+  services:
+    - postgresql
+database:
+  override:
+    - createdb test_template
+    - echo "ALTER USER postgres WITH PASSWORD 'dev'" | psql -U postgres
